@@ -6,7 +6,7 @@ class Wishlist extends React.Component {
   render () {
     return (
       <div>
-        <p> Hello s.Oliver Wishlist!</p>
+        <p> Hello s.Oliver Wishlist 444!</p>
         <WishlistComponent/>
 
       </div>

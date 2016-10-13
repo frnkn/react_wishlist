@@ -3,15 +3,55 @@ import WishlistItemComponent from './WishlistItemComponent.jsx';
 
 class WishlistComponent extends React.Component {
 
+
+
   constructor(props) {
     super(props);
+    this.data = {
+      products: [
+        {name: 'Jeans', price: 22.05, url: "http://www.soliver.de"},
+        {name: 'T-Shirt', price: 39.95, url: "http://www.soliver.de"},
+        {name: 'Shoe', price: 99.95, url :"http://www.soliver.de"}
+      ]
+    };
   };
+
+  getWishlistItems() {
+    console.log("ALL", this.data.products);
+    for (var product in this.data.products) {
+      console.log("PRD", product);
+    }
+    console.log("LEN", this.data.products.length);
+    for (var product in this.data.products) {
+      console.log("PRDUCT", product);
+      return (
+
+        <WishlistItemComponent name={product.name} price={product.price} url={product.url} />
+      );
+    }
+  }
 
   render() {
     return (
       <div>
-        <h1>Hello Wishlist Component</h1>
-        <WishlistItemComponent />
+        <table className="u-full-width">
+          <thead>
+            <tr>
+              <th>
+                Product Name
+              </th>
+              <th>
+                Price
+              </th>
+              <th>
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            { this.getWishlistItems() }
+          </tbody>
+        </table>
       </div>
     );
   }

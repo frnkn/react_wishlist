@@ -8,25 +8,13 @@ class WishlistItemComponent extends React.Component {
 
   render() {
     return (
-      <div>
-        <table>
+
           <tr>
-            <td>123456</td>
-            <td>Pullover</td>
-            <td>25, 45 EUR</td>
+            <td>{this.props.name}</td>
+            <td>{this.props.price}</td>
+            <td><a className="button button-primary" href="{this.props.url}">Anchor button</a></td>
           </tr>
-          <tr>
-            <td>123456</td>
-            <td>Hose</td>
-            <td>25, 45 EUR</td>
-          </tr>
-          <tr>
-            <td>123456</td>
-            <td>Jeans</td>
-            <td>25, 45 EUR</td>
-          </tr>
-        </table>
-      </div>
+
     );
   }
 }
