@@ -17,18 +17,15 @@ class WishlistComponent extends React.Component {
   };
 
   getWishlistItems() {
-    console.log("ALL", this.data.products);
-    for (var product in this.data.products) {
-      console.log("PRD", product);
-    }
-    console.log("LEN", this.data.products.length);
-    for (var product in this.data.products) {
+    let all = []
+    
+    for (let product of this.data.products) {
       console.log("PRDUCT", product);
-      return (
-
+      all.push(
         <WishlistItemComponent name={product.name} price={product.price} url={product.url} />
       );
     }
+    return all;
   }
 
   render() {
