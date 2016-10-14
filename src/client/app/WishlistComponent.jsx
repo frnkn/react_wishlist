@@ -3,8 +3,6 @@ import WishlistItemComponent from './WishlistItemComponent.jsx';
 
 class WishlistComponent extends React.Component {
 
-
-
   constructor(props) {
     super(props);
     this.data = {
@@ -14,12 +12,26 @@ class WishlistComponent extends React.Component {
         {name: 'Shoe', price: 99.95, url :"http://www.soliver.de"}
       ]
     };
+    this.state = {
+      products: this.data.products
+    }
+    this.increaseWishlist = this.increaseWishlist.bind(this);
   };
+
+  increaseWishlist() {
+    console.log("Increas Wishlist");
+    var dummyProduct = {
+        name: 'Dummy Product', price: 22.05, url: "http://www.soliver.de"
+    };
+    console.log("DUMMY PRODUCT", dummyProduct);
+    this.setState({products: dummyProduct});
+  }
+
 
   getWishlistItems() {
     let all = []
-    
-    for (let product of this.data.products) {
+
+    for (let product of this.state.products) {
       console.log("PRDUCT", product);
       all.push(
         <WishlistItemComponent name={product.name} price={product.price} url={product.url} />
@@ -28,9 +40,12 @@ class WishlistComponent extends React.Component {
     return all;
   }
 
+
+
   render() {
     return (
       <div>
+        <button onClick={this.increaseWishlist()}>Add Dummy PRoduct</button>
         <table className="u-full-width">
           <thead>
             <tr>

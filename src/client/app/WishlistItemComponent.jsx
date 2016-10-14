@@ -12,7 +12,7 @@ class WishlistItemComponent extends React.Component {
           <tr>
             <td>{this.props.name}</td>
             <td>{this.props.price}</td>
-            <td><a className="button button-primary" href="{this.props.url}">Anchor button</a></td>
+            <td><a className="button button-primary" href={this.props.url}>Anchor button</a></td>
           </tr>
 
     );
